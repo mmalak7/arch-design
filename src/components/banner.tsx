@@ -1,9 +1,16 @@
 import React from "react";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
+import { motion } from "framer-motion";
+
+const transition = { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const Banner = () => {
   return (
-    <section className="main">
+    <motion.section
+      exit={{ opacity: 0 }}
+      transition={transition}
+      className="main"
+    >
       <div className="container">
         <div className="row">
           <h2>
@@ -21,7 +28,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
