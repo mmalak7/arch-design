@@ -8,6 +8,8 @@ import IntroOverlay from "./components/introOverlay";
 import "./styles/App.scss";
 import { AnimatePresence } from "framer-motion";
 import DetailsPage from "./components/detailsPage";
+import Contact from "./components/contact";
+import About from "./components/about";
 
 function App() {
   const [animationStarted, setanimationStarted] = useState(true);
@@ -57,7 +59,7 @@ function App() {
       });
     setTimeout(() => {
       setanimationStarted(false);
-    }, 6000);
+    }, 8000);
   }, []);
 
   return (
@@ -65,10 +67,7 @@ function App() {
       <div className="App">
         <Route
           render={({ location }) => (
-            <AnimatePresence
-              // initial={false}
-              exitBeforeEnter
-            >
+            <AnimatePresence initial={false} exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route exact path="/">
                   {animationStarted && <IntroOverlay />}
@@ -77,6 +76,8 @@ function App() {
                   <Cases />
                 </Route>
                 <Route exact path={`/model/:id`} component={DetailsPage} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/about" component={About} />
               </Switch>
             </AnimatePresence>
           )}

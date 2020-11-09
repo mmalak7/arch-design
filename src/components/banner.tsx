@@ -18,12 +18,12 @@ const Banner = () => {
               <span>Create unique projects is</span>
             </div>
             <div className="line">
-              <span>what we do.</span>
+              <span>what I do.</span>
             </div>
           </h2>
           <div className="btn-row">
-            <a href="/">
-              More about us <RightArrow />
+            <a href="/about">
+              More about me <RightArrow />
             </a>
           </div>
         </div>

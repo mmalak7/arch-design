@@ -1,5 +1,5 @@
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
 import { ReactComponent as ArrowDown } from "../assets/arrow-down.svg";
 import { gsap, Power2 } from "gsap";
 import InformationDropdown from "./informationDropdown";
@@ -18,6 +18,7 @@ const DetailsPage = ({ match }: { match: any }) => {
 
   let tl = gsap.timeline();
   let imageReveal = CSSRulePlugin.getRule(".details-image:after");
+  let scrollRef = useRef(null);
 
   useEffect(() => {
     if (match.params.id === "1") {
@@ -58,18 +59,20 @@ const DetailsPage = ({ match }: { match: any }) => {
       });
     }
 
-    tl.to(".details-section", 0.2, {
+    tl.to(".details-section", 0.01, {
       css: { visibility: "visible" },
     })
-      .to(imageReveal, 1.6, { height: "0vh", ease: Power2.easeInOut })
-      .from(".details-page img", 1.4, {
-        scale: 1.4,
+      .to(imageReveal, 0.5, { visibility: "visible" })
+      .to(imageReveal, 1.5, { height: "0%", ease: Power2.easeInOut })
+      .from(".details-page img", 2, {
+        scale: 1.3,
         ease: Power2.easeInOut,
-        delay: -1,
+        delay: -1.5,
       })
-      .to(".information-section", 0.2, {
-        css: { visibility: "visible" },
-      });
+      .to(".information-section", 0.3, {
+        css: { display: "flex" },
+      })
+      .to(imageReveal, 0.5, { visibility: "hidden", height: "100%" });
   }, []);
 
   const {
@@ -82,29 +85,16 @@ const DetailsPage = ({ match }: { match: any }) => {
     img,
   } = displayedInformation;
 
-  const test = {
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 1.6,
+  const animationChildren = (delay: number) => {
+    const test = {
+      animate: {
+        y: 0,
+        transition: {
+          delayChildren: delay,
+        },
       },
-    },
-  };
-  const test1 = {
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 1.8,
-      },
-    },
-  };
-  const test2 = {
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 2,
-      },
-    },
+    };
+    return test;
   };
 
   const textAnimation = {
@@ -113,8 +103,11 @@ const DetailsPage = ({ match }: { match: any }) => {
     },
     animate: {
       y: 0,
-      opacity: 1,
     },
+  };
+
+  const scrollToRef = (ref: any) => {
+    window.scrollTo(0, ref.current.offsetTop);
   };
 
   return (
@@ -123,33 +116,46 @@ const DetailsPage = ({ match }: { match: any }) => {
         <div className="container">
           <div className="details-page">
             <div className="details-image">
-              <img src={process.env.PUBLIC_URL + `/${img}.jpg`} alt={title} />{" "}
+              <img src={process.env.PUBLIC_URL + `/${img}.jpg`} alt={title} />
             </div>
-            <motion.div variants={test} className="details-title">
+            <motion.div
+              variants={animationChildren(2.1)}
+              className="details-title"
+            >
               <motion.div variants={textAnimation} className="project-title">
                 {title}
               </motion.div>
             </motion.div>
-            <motion.div variants={test1} className="details-quote">
+            <motion.div
+              variants={animationChildren(2.3)}
+              className="details-quote"
+            >
               <motion.div variants={textAnimation} className="project-quote">
                 {quote}
               </motion.div>
             </motion.div>
-            <motion.div variants={test2} className="discover">
+            <motion.div
+              onClick={() => scrollToRef(scrollRef)}
+              variants={animationChildren(2.7)}
+              className="discover"
+            >
               <motion.div variants={textAnimation} className="discover-icon">
-                <p>Discover</p>
-                <ArrowDown />
+                <p>Scroll for more</p>
+                <motion.span className="arrow-down">
+                  <ArrowDown />
+                </motion.span>
               </motion.div>
             </motion.div>
           </div>
         </div>
       </div>
-      <div className="information-section">
+      <div className="information-section" ref={scrollRef}>
         <div className="information-section">
           <div className="services-dropdown">
             <InformationDropdown />
           </div>
           <div className="about-project">
+            <motion.p className="about-section">ABOUT PROJECT</motion.p>
             <p className="about-intro-short">{overview}</p>
             <p className="about-intro-detailed">{description}</p>
           </div>

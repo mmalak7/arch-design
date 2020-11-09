@@ -2,8 +2,8 @@
     height: 100vh;
     visibility: hidden;
     background-color: #f1f1f1;
-    overflow-y: hidden;
-    
+    overflow: hidden;
+
     .container {
         width: 1280px;
         min-width: 1280px;
@@ -12,9 +12,7 @@
         position: relative;
         overflow-y: hidden;
 
-
         .details-page {
-            
             .details-title {
                 font-size: 3.2vw;
                 text-align: center;
@@ -41,7 +39,7 @@
                 overflow: hidden;
                 padding-right: 2.2vw;
                 text-align: end;
-
+                cursor: pointer;
                 .discover-icon {
                     font-size: 1vw;
 
@@ -52,7 +50,10 @@
                     }
 
                     svg {
-                        padding-right: 1vw;
+                        padding-right: 2.25vw;
+                        animation: arrowDown 2s ease-in-out 1s;
+                        animation-delay: 2.8s;
+                        animation-iteration-count: infinite;
                     }
                 }
             }
@@ -69,6 +70,7 @@
 
     &:after {
         content: "";
+        visibility: hidden;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -85,13 +87,17 @@
 }
 
 .information-section {
-    min-height: 520px;
+    min-height: 680px;
+    height: 100%;
+    display: none;
+    background-color: #f1f1f1;
+
     .information-section {
         background-color: #f1f1f1;
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
-        padding: 0vw calc(6.3375vw) 10.055vw;
+        padding: 5vw calc(6.3375vw) 0.015vw;
         .services-dropdown {
             flex: 1 1 40%;
             .about-dropdown {
@@ -102,20 +108,36 @@
         }
         .about-project {
             flex: 2 1 60%;
-            padding-left: 10.2%;
+            padding-left: 8.2%;
+            line-height: 1.5;
+
+            .about-section {
+                text-decoration: underline;
+                font-size: 1.4vw;
+            }
 
             .about-intro-short {
                 text-align: justify;
                 font-size: 1.5vw;
-                line-height: 1.5;
             }
 
             .about-intro-detailed {
                 text-align: justify;
                 font-size: 1.2vw;
-                line-height: 1.5;
                 opacity: 0.4;
             }
         }
+    }
+}
+
+@keyframes arrowDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }

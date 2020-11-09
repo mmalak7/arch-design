@@ -13,11 +13,12 @@ const Header = () => {
       <div className="container">
         <div className="row v-center space-between">
           <div className="logo">
-            <a href="/">ArcHiTecture.</a>
+            <a href="/">MioStudio.</a>
           </div>
           <div className="nav">
-            <span></span>
-            <span></span>
+            {/* <span></span>
+            <span></span> */}
+            <a href="/contact">Contact</a>
           </div>
         </div>
       </div>

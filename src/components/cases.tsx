@@ -47,6 +47,7 @@ const Cases = () => {
           {caseStudies.map((caseItem) => (
             <Link
               to={`/model/${caseItem.id}`}
+              key={caseItem.id}
               style={{ textDecoration: "none" }}
             >
               <div className="case" key={caseItem.id}>
@@ -58,6 +59,7 @@ const Cases = () => {
                   <img
                     src={process.env.PUBLIC_URL + `/${caseItem.img}.jpg`}
                     alt={caseItem.title}
+                    key={caseItem.title}
                   />
                 </div>
               </div>

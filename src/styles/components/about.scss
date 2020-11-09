@@ -1,0 +1,89 @@
+.container {
+    width: 1480px !important;
+    height: 100vh !important;
+    display: flex;
+
+    .social-icons {
+        display: flex;
+        position: fixed;
+        height: 64px;
+        padding-left: 5.5vw;
+        align-items: center;
+
+        svg {
+            margin-right: 6vw;
+        }
+    }
+    .left-page-info {
+        flex: 1 1 70%;
+        margin: auto;
+        display: flex;
+
+        .about-me-img {
+            z-index: 1;
+            width: 550px;
+            height: 80vh;
+            padding-left: 5.5vw;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .about-quote {
+            border-left: 1px solid black;
+            z-index: 2;
+            margin: auto;
+            font-size: 3.75vw;
+            text-align: left;
+            font-weight: 500;
+            transform: translateX(-125px);
+
+            p {
+                margin: 0;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    .right-page-info {
+        flex: 2 1 35%;
+
+        .small-description-image {
+            width: 325px;
+            height: 55vh;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .about-description {
+            position: absolute;
+
+            .about-paragraph {
+                margin-top: 2.5vw;
+                width: 325px;
+                font-size: 1.1vw;
+                text-align: justify;
+            }
+
+            .about-paragraph-reflection {
+                overflow: hidden;
+                max-height: 100px;
+                margin-top: 0vw;
+                width: 325px;
+                font-size: 1.1vw;
+                text-align: justify;
+                -webkit-mask-image: -webkit-gradient(
+                    linear,
+                    left 50%,
+                    left bottom,
+                    from(rgba(0, 0, 0, 0.4)),
+                    to(rgba(0, 0, 0, 0))
+                );
+            }
+        }
+    }
+}
