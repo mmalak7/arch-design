@@ -5,7 +5,7 @@ import { ReactComponent as Dribble } from "../assets/dribbble.svg";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container-about">
       <div className="social-icons">
         <Instagram />
         <Linkedin />
