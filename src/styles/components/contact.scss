@@ -1,5 +1,6 @@
 .container-contact {
-    width: 1480px !important;
+    // width: 1480px !important;
+    width: 100% !important;
     height: 100vh !important;
     background-color: #f1f1f1;
     margin: 0 auto;
@@ -11,14 +12,15 @@
 
         .header-panel {
             display: flex;
+            padding-left: 7vw;
             .upper-part {
                 margin: auto;
 
                 .collaborate {
-                    font-size: 4.5vw;
+                    font-size: 5.5vw;
                 }
                 .email-part {
-                    font-size: 1.2vw;
+                    font-size: 2.2vw;
                     opacity: 0.6;
                 }
             }
@@ -26,7 +28,7 @@
         .contact-panel {
             display: flex;
             padding-top: 5vw;
-            padding-left: 3vw;
+            padding-left: 3.5vw;
 
             p {
                 font-size: 1.4vw;

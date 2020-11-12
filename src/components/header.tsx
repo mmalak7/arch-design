@@ -18,6 +18,7 @@ const Header = () => {
           <div className="nav">
             {/* <span></span>
             <span></span> */}
+            <a href="/projects">Projects</a>
             <a href="/contact">Contact</a>
           </div>
         </div>

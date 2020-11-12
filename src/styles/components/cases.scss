@@ -33,6 +33,8 @@
         }
     }
     .row {
+        overflow: hidden;
+        
         @include media("<=tablet") {
             flex-direction: column;
         }

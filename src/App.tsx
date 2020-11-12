@@ -10,6 +10,10 @@ import { AnimatePresence } from "framer-motion";
 import DetailsPage from "./components/detailsPage";
 import Contact from "./components/contact";
 import About from "./components/about";
+import Projects from "./components/projects";
+import ArchDesing from "./components/archDesing";
+import GraphicDesing from "./components/graphicDesing";
+import useMousePoition from "./hooks/useMousePosition";
 
 function App() {
   const [animationStarted, setanimationStarted] = useState(true);
@@ -62,6 +66,8 @@ function App() {
     }, 8000);
   }, []);
 
+  const { x, y } = useMousePoition();
+
   return (
     <Router>
       <div className="App">
@@ -78,6 +84,9 @@ function App() {
                 <Route exact path={`/model/:id`} component={DetailsPage} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/archi-design" component={ArchDesing} />
+                <Route exact path="/graphic-design" component={GraphicDesing} />
               </Switch>
             </AnimatePresence>
           )}

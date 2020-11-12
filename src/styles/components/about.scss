@@ -1,5 +1,6 @@
 .container-about {
-    width: 1480px !important;
+    // width: 1480px !important;
+    width: 100% !important;
     height: 100vh !important;
     background-color: #f1f1f1;
     margin: 0 auto;
@@ -9,7 +10,7 @@
         display: flex;
         position: fixed;
         height: 64px;
-        padding-left: 5.5vw;
+        padding-left: 8.5vw;
         align-items: center;
 
         svg {
@@ -23,9 +24,9 @@
 
         .about-me-img {
             z-index: 1;
-            width: 550px;
+            width: 500px;
             height: 80vh;
-            padding-left: 5.5vw;
+            padding-left: 8.5vw;
 
             img {
                 width: 100%;
@@ -40,7 +41,7 @@
             font-size: 3.75vw;
             text-align: left;
             font-weight: 500;
-            transform: translate(-95px, -65px);
+            transform: translate(-115px, -65px);
 
             p {
                 margin: 0;

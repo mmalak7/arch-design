@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as CasesNext } from "../assets/cases-arrow-right.svg";
 import { ReactComponent as CasesPrev } from "../assets/cases-arrow-left.svg";
@@ -35,14 +35,7 @@ const Cases = () => {
         transition={transition}
         className="container-fluid"
       >
-        <div className="cases-navigation">
-          <div className="cases-arrow prev disabled">
-            <CasesPrev />
-          </div>
-          <div className="cases-arrow next">
-            <CasesNext />
-          </div>
-        </div>
+        <div className="cases-navigation"></div>
         <div className="row">
           {caseStudies.map((caseItem) => (
             <Link
@@ -59,7 +52,7 @@ const Cases = () => {
                   <img
                     src={process.env.PUBLIC_URL + `/${caseItem.img}.jpg`}
                     alt={caseItem.title}
-                    key={caseItem.title}
+                    key={caseItem.id}
                   />
                 </div>
               </div>
