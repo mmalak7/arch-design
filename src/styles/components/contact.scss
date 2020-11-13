@@ -1,53 +1,156 @@
-.container-contact {
-    width: 100% !important;
-    height: 100vh !important;
-    background-color: #f1f1f1;
-    margin: 0 auto;
-    display: flex;
+// .container-contact {
+//     width: 100% !important;
+//     height: 100vh !important;
+//     background-color: #f1f1f1;
+//     margin: 0 auto;
+//     display: flex;
 
-    .left-panel {
-        flex: 1 1 50%;
-        margin: auto;
+//     .left-panel {
+//         flex: 1 1 50%;
+//         margin: auto;
 
-        .header-panel {
-            display: flex;
-            padding-left: 7vw;
-            .upper-part {
-                margin: auto;
+//         .header-panel {
+//             display: flex;
+//             padding-left: 7vw;
+//             .upper-part {
+//                 margin: auto;
 
-                .collaborate {
-                    font-size: 5.5vw;
-                }
-                .email-part {
-                    font-size: 2.2vw;
-                    opacity: 0.6;
-                }
-            }
-        }
-        .contact-panel {
-            display: flex;
-            padding-top: 5vw;
-            padding-left: 3.5vw;
+//                 .collaborate {
+//                     font-size: 5.5vw;
+//                 }
+//                 .email-part {
+//                     font-size: 2.2vw;
+//                     opacity: 0.6;
+//                 }
+//             }
+//         }
+//         .contact-panel {
+//             display: flex;
+//             padding-top: 5vw;
+//             padding-left: 3.5vw;
 
-            p {
-                font-size: 1.4vw;
-                margin: 0 auto;
-            }
-        }
-    }
-    .right-panel {
-        flex: 2 1 50%;
-        margin: auto;
+//             p {
+//                 font-size: 1.4vw;
+//                 margin: 0 auto;
+//             }
+//         }
+//     }
+//     .right-panel {
+//         flex: 2 1 50%;
+//         margin: auto;
 
-        .dog-pic {
-            margin: auto;
-            width: 450px;
-            height: 80vh;
+//         .dog-pic {
+//             margin: auto;
+//             width: 450px;
+//             height: 80vh;
 
-            img {
+//             img {
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//             }
+//         }
+//     }
+// }
+
+.container-fluid {
+    .row {
+        .left-part {
+            flex: 1 1 40%;
+            height: 100vh;
+            background-color: #f1f1f1;
+
+            .logo {
+                position: fixed;
                 width: 100%;
+                display: flex;
+                height: 128px;
+                z-index: 99;
+                align-items: center;
+                padding: 0 5rem;
+                a {
+                    font-size: 1.2rem;
+                    letter-spacing: 0.5rem;
+                    color: black;
+                    font-weight: 700;
+                    text-decoration: none;
+                }
+            }
+            .contact-image {
                 height: 100%;
-                object-fit: cover;
+                display: flex;
+
+                img {
+                    margin: auto;
+                }
+            }
+        }
+        .right-part {
+            flex: 1 2 60%;
+            margin: auto;
+            .info-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                vertical-align: middle;
+                padding-left: 5vw;
+
+                .quote {
+                    font-size: 3vw;
+                    font-weight: 600;
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 5vw;
+                }
+                .email {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 2.5vw;
+
+                    .first-row {
+                        font-size: 1.3vw;
+                        font-weight: 600;
+                    }
+                    .second-row {
+                        font-size: 1.2vw;
+                    }
+                }
+                .contact-number {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 2.5vw;
+
+                    .first-row {
+                        font-size: 1.3vw;
+                        font-weight: 600;
+                    }
+                    .second-row {
+                        font-size: 1.2vw;
+                    }
+                }
+                .social-link {
+                    display: flex;
+                    flex-direction: column;
+
+                    .social-title {
+                        font-size: 1.3vw;
+                        font-weight: 600;
+                    }
+
+                    .social-names {
+                        font-size: 1.2vw;
+                    }
+
+                    span {
+                        padding-right: 3vw;
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
         }
     }

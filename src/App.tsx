@@ -60,9 +60,13 @@ function App() {
           amount: 0.4,
         },
       });
+
+    console.log(animationStarted);
+
     setTimeout(() => {
       setanimationStarted(false);
     }, 8000);
+    console.log(animationStarted);
   }, []);
 
   return (
@@ -72,18 +76,22 @@ function App() {
           render={({ location }) => (
             <AnimatePresence initial={false} exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
-                <Route exact path="/">
+                <Route exact path={`/`}>
                   {animationStarted && <IntroOverlay />}
                   <Header />
                   <Banner />
                   <Cases />
                 </Route>
                 <Route exact path={`/model/:id`} component={DetailsPage} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/projects" component={Projects} />
-                <Route exact path="/archi-design" component={ArchDesing} />
-                <Route exact path="/graphic-design" component={GraphicDesing} />
+                <Route exact path={`/contact`} component={Contact} />
+                <Route exact path={`/about`} component={About} />
+                <Route exact path={`/projects`} component={Projects} />
+                <Route exact path={`/archi-design`} component={ArchDesing} />
+                <Route
+                  exact
+                  path={`/graphic-design`}
+                  component={GraphicDesing}
+                />
                 <Route
                   path="/instagram"
                   component={() => {
