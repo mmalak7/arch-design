@@ -13,7 +13,6 @@ import About from "./components/about";
 import Projects from "./components/projects";
 import ArchDesing from "./components/archDesing";
 import GraphicDesing from "./components/graphicDesing";
-import useMousePoition from "./hooks/useMousePosition";
 
 function App() {
   const [animationStarted, setanimationStarted] = useState(true);
@@ -66,8 +65,6 @@ function App() {
     }, 8000);
   }, []);
 
-  const { x, y } = useMousePoition();
-
   return (
     <Router>
       <div className="App">
@@ -87,6 +84,29 @@ function App() {
                 <Route exact path="/projects" component={Projects} />
                 <Route exact path="/archi-design" component={ArchDesing} />
                 <Route exact path="/graphic-design" component={GraphicDesing} />
+                <Route
+                  path="/instagram"
+                  component={() => {
+                    window.location.href =
+                      "https://www.instagram.com/monika.jokiel/";
+                    return null;
+                  }}
+                />
+                <Route
+                  path="/linkedin"
+                  component={() => {
+                    window.location.href =
+                      "https://www.linkedin.com/in/monika-jokiel-44783018b/";
+                    return null;
+                  }}
+                />
+                <Route
+                  path="/dribbble"
+                  component={() => {
+                    window.location.href = "https://dribbble.com/";
+                    return null;
+                  }}
+                />
               </Switch>
             </AnimatePresence>
           )}

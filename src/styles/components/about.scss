@@ -1,49 +1,84 @@
+// @import "./breakpoints.scss";
+
 .container-about {
-    // width: 1480px !important;
     width: 100% !important;
     height: 100vh !important;
     background-color: #f1f1f1;
     margin: 0 auto;
     display: flex;
+    visibility: hidden;
+    // flex-direction: column;
+
+    @include media("<=desktop") {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    // @include media("<=phone") {
+    //     height: 100vh !important;
+    //     background-color: #f1f1f1;
+    // }
 
     .social-icons {
         display: flex;
         position: fixed;
+        overflow: hidden;
         height: 64px;
         padding-left: 8.5vw;
         align-items: center;
 
+        // @include media("<=phone") {
+        //     display: flex;
+        //     width: 100%;
+        //     z-index: 1;
+        //     position: fixed;
+        //     padding-left: 6vw;
+        //     justify-content: space-between;
+        //     box-sizing: border-box;
+        // }
         svg {
             margin-right: 6vw;
         }
     }
+
     .left-page-info {
         flex: 1 1 70%;
         margin: auto;
         display: flex;
 
-        .about-me-img {
-            z-index: 1;
-            width: 500px;
-            height: 80vh;
-            padding-left: 8.5vw;
+        // @include media("<=phone") {
+        //     display: flex;
+        //     align-items: center;
+        // }
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
         .about-quote {
             border-left: 1px solid black;
+            border-left-width: 0px;
             z-index: 2;
+            overflow: hidden;
             margin: auto;
             font-size: 3.75vw;
             text-align: left;
             font-weight: 500;
             transform: translate(-115px, -65px);
 
+            @include media(">=1560px") {
+                font-size: 4vw;
+                transform: translate(-150px, -65px);
+            }
+
+            // @include media("<=phone") {
+            //     z-index: 2;
+            //     border-left: none;
+            //     overflow: hidden;
+            //     margin: auto;
+            //     font-size: 2rem;
+            //     width: 100%;
+            //     text-align: center;
+            //     transform: translate(-75px, -25px);
+            // }
             p {
+                overflow: hidden;
                 margin: 0;
                 padding-left: 20px;
             }
@@ -53,41 +88,150 @@
     .right-page-info {
         flex: 2 1 35%;
 
-        .small-description-image {
-            width: 325px;
-            height: 55vh;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+        // @include media("<=phone") {
+        //     display: flex;
+        // }
+
         .about-description {
             position: absolute;
 
-            .about-paragraph {
-                margin-top: 2.5vw;
-                width: 325px;
-                font-size: 1.1vw;
-                opacity: 0.7;
-                text-align: justify;
-            }
-
-            .about-paragraph-reflection {
-                overflow: hidden;
-                max-height: 100px;
-                margin-top: 0vw;
-                width: 325px;
-                font-size: 1.1vw;
-                text-align: justify;
-                -webkit-mask-image: -webkit-gradient(
-                    linear,
-                    left 50%,
-                    left bottom,
-                    from(rgba(0, 0, 0, 0.4)),
-                    to(rgba(0, 0, 0, 0))
-                );
-            }
+            // @include media("<=phone") {
+            //     width: 100%;
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: center;
+            // }
         }
     }
+}
+
+.about-me-img {
+    z-index: 1;
+    width: 500px;
+    height: 80vh;
+    padding-left: 8.5vw;
+    position: relative;
+
+    @include media(">=1560px") {
+        width: 600px;
+        height: 85vh;
+    }
+    @include media("<=1560px") {
+        height: 75vh;
+    }
+    @include media("<=desktop") {
+        width: 450px;
+        height: 75vh;
+    }
+
+    // @include media("<=phone") {
+    //     width: 100%;
+    //     height: 50%;
+    //     padding-left: 2rem;
+    // }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: #f1f1f1;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.small-description-image {
+    width: 325px;
+    height: 55vh;
+    position: relative;
+
+    @include media("<=desktop") {
+        width: 275px;
+        height: 55vh;
+    }
+    // @include media("<=phone") {
+    //     display: none;
+    // }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: #f1f1f1;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.about-paragraph {
+    margin-top: 2.5vw;
+    width: 325px;
+    font-size: 1.1vw;
+    opacity: 0.7;
+    text-align: justify;
+    position: relative;
+
+    @include media("<=desktop") {
+        width: 275px;
+    }
+
+    // @include media("<=phone") {
+    //     font-size: 1rem;
+    //     opacity: 0.7;
+    //     text-align: justify;
+    //     position: relative;
+    // }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: #f1f1f1;
+    }
+}
+
+.about-paragraph-reflection {
+    overflow: hidden;
+    opacity: 0;
+    max-height: 100px;
+    margin-top: 0vw;
+    width: 325px;
+    font-size: 1.1vw;
+    text-align: justify;
+    -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0)));
+
+    @include media("<=desktop") {
+        width: 275px;
+    }
+
+    // @include media("<=phone") {
+    //     max-height: 100px;
+    //     margin-top: 0vw;
+    //     width: 325px;
+    //     font-size: 1.1vw;
+    //     text-align: justify;
+    //     -webkit-mask-image: -webkit-gradient(
+    //         linear,
+    //         left 50%,
+    //         left bottom,
+    //         from(rgba(0, 0, 0, 0.4)),
+    //         to(rgba(0, 0, 0, 0))
+    //     );
+    // }
 }

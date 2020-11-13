@@ -99,7 +99,7 @@ const DetailsPage = ({ match }: { match: any }) => {
 
   const textAnimation = {
     initial: {
-      y: 80,
+      y: 100,
     },
     animate: {
       y: 0,

@@ -1,6 +1,7 @@
 .container-projects {
     width: 100%;
     display: flex;
+    position: relative;
     height: 100vh;
     align-items: center;
     justify-content: center;
@@ -8,18 +9,39 @@
     a {
         text-decoration: none;
         color: black;
+        z-index: 99;
     }
     .arch-part {
         font-size: 5vw;
         font-weight: 600;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 850px;
+            z-index: 1;
+            position: absolute;
+            transform: translate(-300px, -200px);
+        }
     }
     .divider {
         font-size: 5vw;
         padding: 20px;
         font-weight: 600;
+        z-index: 99;
     }
     .graph-part {
         font-weight: 600;
         font-size: 5vw;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            z-index: 1;
+            position: absolute;
+            transform: translate(-100px, -300px);
+        }
     }
 }

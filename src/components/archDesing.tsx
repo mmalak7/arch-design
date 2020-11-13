@@ -34,11 +34,11 @@ const ArchDesign = () => {
     },
     {
       id: 4,
-      subtitle: "Barcelona",
-      title: "Most precious memories",
+      subtitle: "Office",
+      title: "Open space feels better",
       img: "arch3",
-      strokeX: 150,
-      strokeY: 750,
+      strokeX: -450,
+      strokeY: 550,
     },
   ];
 

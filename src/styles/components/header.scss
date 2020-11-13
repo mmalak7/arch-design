@@ -21,18 +21,9 @@
     }
 
     .nav {
-        // width: 25px;
         @include media("<=phone") {
-            // width: 20px;
         }
-        // span {
-        //     margin-bottom: 0.3rem;
-        //     background: black;
-        //     height: 2px;
-        //     width: 100%;
-        //     display: block;
-        // }
-
+        
         a {
             font-size: 1.2rem;
             padding-left: 12vw;
