@@ -57,6 +57,18 @@ const DetailsPage = ({ match }: { match: any }) => {
         quote: "~Home is not a place.. it's a feeling",
         img: "arch3",
       });
+    } else if (match.params.id === "4") {
+      setDisplayedInformation({
+        id: 4,
+        title: "Barcelona",
+        subtitle: "Most Precious memories",
+        overview:
+          "Suspendisse potenti. Donec convallis arcu egestas neque tempus,sed elementum nibh malesuada. Sed convallis at sem non gravida.Phasellus sed aliquet mauris. Quisque rhoncus vestibulumpellentesque. Sed quam quam, tempus quis egestas eget, interdum acodio. Cras cursus fringilla aliquet. Sed et fermentum purus, nonauctor sapien.",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbimalesuada ipsum a quam tincidunt rutrum vitae id diam. Aeneanlacinia congue ipsum, a eleifend sem finibus quis. Aliquam etlibero dictum, ornare odio a, scelerisque libero. Nunc posuereipsum magna, in interdum sem pharetra at. Maecenas ultricesultrices arcu quis ullamcorper",
+        quote: "~Most Precious memories",
+        img: "arch4",
+      });
     }
 
     tl.to(".details-section", 0.01, {

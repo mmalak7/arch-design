@@ -70,7 +70,7 @@ const About = () => {
       </div>
       <div className="left-page-info">
         <div className="about-me-img">
-          <img src={process.env.PUBLIC_URL + `pomeranian.jpg`} alt="" />
+          <img src={process.env.PUBLIC_URL + `home.jpg`} alt="" />
         </div>
         <div className="about-quote">
           <p>Home is</p>
@@ -80,7 +80,7 @@ const About = () => {
       </div>
       <div className="right-page-info">
         <div className="small-description-image">
-          <img src={process.env.PUBLIC_URL + `pomeranian2.jpg`} alt="" />
+          <img src={process.env.PUBLIC_URL + `home-thumbnail.jpg`} alt="" />
         </div>
         <div className="about-description">
           <p className="about-paragraph">

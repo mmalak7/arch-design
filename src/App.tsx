@@ -61,12 +61,9 @@ function App() {
         },
       });
 
-    console.log(animationStarted);
-
     setTimeout(() => {
       setanimationStarted(false);
     }, 8000);
-    console.log(animationStarted);
   }, []);
 
   return (
@@ -95,16 +92,14 @@ function App() {
                 <Route
                   path="/instagram"
                   component={() => {
-                    window.location.href =
-                      "https://www.instagram.com/monika.jokiel/";
+                    window.location.href = "https://www.instagram.com";
                     return null;
                   }}
                 />
                 <Route
                   path="/linkedin"
                   component={() => {
-                    window.location.href =
-                      "https://www.linkedin.com/in/monika-jokiel-44783018b/";
+                    window.location.href = "https://www.linkedin.com";
                     return null;
                   }}
                 />

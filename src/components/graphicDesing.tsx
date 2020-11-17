@@ -36,7 +36,7 @@ const GraphicDesing = () => {
       id: 4,
       subtitle: "Barcelona",
       title: "Most precious memories",
-      img: "arch3",
+      img: "arch4",
       strokeX: 150,
       strokeY: 750,
     },

@@ -34,9 +34,9 @@ const ArchDesign = () => {
     },
     {
       id: 4,
-      subtitle: "Office",
-      title: "Open space feels better",
-      img: "arch3",
+      subtitle: "Bridge",
+      title: "Strong buildings",
+      img: "arch4",
       strokeX: -450,
       strokeY: 550,
     },
@@ -124,6 +124,7 @@ const Item = ({
             opacity: hoverState ? 1 : 0,
             x: x - listPosition.top - strokeX,
             y: y - listPosition.left - strokeY,
+            zIndex: 99,
           }}
           className="floating-image"
         >
