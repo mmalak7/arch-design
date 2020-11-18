@@ -9,12 +9,12 @@ import { motion } from "framer-motion";
 const transition = { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const About = () => {
-  let tl = gsap.timeline();
-  let aboutMeImg = CSSRulePlugin.getRule(".about-me-img:after");
-  let smallDescImg = CSSRulePlugin.getRule(".small-description-image:after");
-  let aboutParagraph = CSSRulePlugin.getRule(".about-paragraph:after");
-
   useEffect(() => {
+    let tl = gsap.timeline();
+    let aboutMeImg = CSSRulePlugin.getRule(".about-me-img:after");
+    let smallDescImg = CSSRulePlugin.getRule(".small-description-image:after");
+    let aboutParagraph = CSSRulePlugin.getRule(".about-paragraph:after");
+
     tl.to(".container-about", 0.01, {
       css: { visibility: "visible" },
     })

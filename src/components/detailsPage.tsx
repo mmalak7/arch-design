@@ -15,12 +15,12 @@ const DetailsPage = ({ match }: { match: any }) => {
     quote: "",
     img: "",
   });
-
-  let tl = gsap.timeline();
-  let imageReveal = CSSRulePlugin.getRule(".details-image:after");
   let scrollRef = useRef(null);
-
+  
   useEffect(() => {
+    let tl = gsap.timeline();
+    let imageReveal = CSSRulePlugin.getRule(".details-image:after");
+
     if (match.params.id === "1") {
       setDisplayedInformation({
         id: 1,
@@ -85,17 +85,9 @@ const DetailsPage = ({ match }: { match: any }) => {
         css: { display: "flex" },
       })
       .to(imageReveal, 0.5, { visibility: "hidden", height: "100%" });
-  }, []);
+  }, [match.params.id]);
 
-  const {
-    id,
-    subtitle,
-    title,
-    overview,
-    description,
-    quote,
-    img,
-  } = displayedInformation;
+  const { title, overview, description, quote, img } = displayedInformation;
 
   const animationChildren = (delay: number) => {
     const test = {
